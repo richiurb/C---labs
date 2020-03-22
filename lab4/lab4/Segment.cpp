@@ -10,8 +10,8 @@ double Segment::square() {
 	return 0;
 }
 
-double Segment::mass() {
-	return (*this).mas;
+double Segment::mass() const {
+	return mas;
 }
 
 CVector2D Segment::position() {
@@ -22,11 +22,11 @@ CVector2D Segment::position() {
 }
 
 bool Segment::operator==(const IPhysObject& ob) const {
-	//return (*this).mas == ;
+	return mass() == ob.mass();
 }
 
 bool Segment::operator<(const IPhysObject& ob) const {
-	//return (*this).mas < mass();
+	return mass() < ob.mass();
 }
 
 void Segment::draw() {
@@ -35,19 +35,20 @@ void Segment::draw() {
 	std::cout << "Периметр отрезка (его длина): " << (*this).perimeter() << "\n";
 	std::cout << "Площадь отрезка (what?): " << (*this).square() << "\n";
 	std::cout << "Масса отрезка: " << (*this).mass() << "\n";
-	std::cout << "Центр масс по Х" << (*this).position().x << "; по Y: " << (*this).position().y << "\n";
+	std::cout << "Центр масс по Х: " << (*this).position().x << "; по Y: " << (*this).position().y << "\n";
+	std::cout << "Память, занимаемая отрезком: " << (*this).size() << "\n";
 }
 
 void Segment::initFromDialog() {
-	std::cout << "Введите координату Х первой точки отрезка: ";
+	std::cout << "\nВведите координату Х первой точки отрезка: ";
 	std::cin >> first.x;
-	std::cout << "/nВведите координату Y первой точки отрезка: ";
+	std::cout << "\nВведите координату Y первой точки отрезка: ";
 	std::cin >> first.y;
-	std::cout << "/nВведите координату Х второй точки отрезка: ";
+	std::cout << "\nВведите координату Х второй точки отрезка: ";
 	std::cin >> second.x;
-	std::cout << "/nВведите координату Y второй точки отрезка: ";
+	std::cout << "\nВведите координату Y второй точки отрезка: ";
 	std::cin >> second.y;
-	std::cout << "/nВведите массу отрезка: ";
+	std::cout << "\nВведите массу отрезка: ";
 	std::cin >> mas;
 }
 

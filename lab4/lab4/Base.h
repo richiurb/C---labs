@@ -1,5 +1,5 @@
-#ifndef FIRST_H
-#define FIRST_H
+#ifndef BASE_H
+#define BASE_H
 
 // Интерфейс "Геометрическая фигура".
 class IGeoFig {
@@ -19,7 +19,7 @@ public:
 class IPhysObject {
 public:
 	// Масса, кг.
-	virtual double mass() = 0;
+	virtual double mass() const = 0;
 	// Координаты центра масс, м.
 	virtual CVector2D position() = 0;
 	// Сравнение по массе.
@@ -48,4 +48,4 @@ public:
 	virtual unsigned int size() = 0;
 };
 
-#endif FIRST_H
+#endif BASE_H

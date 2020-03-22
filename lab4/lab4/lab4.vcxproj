@@ -123,6 +123,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Base.h" />
+    <ClInclude Include="Hexagon.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="MenuHexagon.h" />
+    <ClInclude Include="MenuSegment.h" />
+    <ClInclude Include="Segment.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Hexagon.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuHexagon.cpp" />
+    <ClCompile Include="MenuSegment.cpp" />
+    <ClCompile Include="Segment.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

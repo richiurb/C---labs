@@ -1,13 +1,14 @@
-#ifndef SEGMENT_H
-#define SEGMENT_H
+#ifndef HEXAGON_H
+#define HEXAGON_H
 
 #include "Base.h"
 
-class Segment : public IGeoFig, public IPhysObject, public IPrintable, public IDialogInitiable, public BaseCObject {
+class Hexagon : public IGeoFig, public IPhysObject, public IPrintable, public IDialogInitiable, public BaseCObject {
 private:
-	CVector2D first;
-	CVector2D second;
+	CVector2D A, B, C, D, E, F;
 	double mas;
+	double side(CVector2D, CVector2D);
+	double square_triangle(double, double, double);
 public:
 	double perimeter();
 	double square();
@@ -21,4 +22,4 @@ public:
 	unsigned int size();
 };
 
-#endif SEGMENT_H
+#endif HEXAGON_H
