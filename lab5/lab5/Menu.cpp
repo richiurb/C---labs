@@ -59,11 +59,8 @@ void menu::menu_main() {
 			}
 			check_end = true;
 		}
-
-
 		menu_next();
 		system("cls");
 	}
-
 	memory.~array();
 }
